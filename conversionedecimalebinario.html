@@ -4,7 +4,58 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Convertitore da Decimale a Binario</title>
-  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      color: black;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .rettangolo {
+      background-color: #cce7ff;
+      border: 2px solid #99ccff;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px auto;
+      width: 90%;
+      max-width: 600px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    input[type="number"] {
+      width: 120px;
+      padding: 8px;
+      margin: 5px;
+      border: 1px solid #666;
+      border-radius: 5px;
+      text-align: center;
+      color: black;
+    }
+
+    button {
+      background-color: #99ccff;
+      color: black;
+      border: 1px solid #666;
+      border-radius: 5px;
+      padding: 8px 15px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      background-color: #80bfff;
+    }
+
+    #risultatoSingolo, #risultatoMultiplo {
+      margin-top: 15px;
+      font-weight: bold;
+      color: black;
+    }
+  </style>
 </head>
 <body>
 
@@ -46,7 +97,7 @@
       } else {
         let binario = parseInt(numero).toString(2).padStart(8, '0');
         risultato.textContent = "Numero binario a 8 bit: " + binario;
-        risultato.style.color = "#d48aa3";
+        risultato.style.color = "black";
       }
     }
 
@@ -57,9 +108,8 @@
       let n4 = document.getElementById('num4').value;
       let risultato = document.getElementById('risultatoMultiplo');
 
-      
       if (n1 === "" || n2 === "" || n3 === "" || n4 === "" || 
-        n1 < 0 || n1 > 255 || n2 < 0 || n2 > 255 || n3 < 0 || n3 > 255 || n4 < 0 || n4 > 255) {
+          n1 < 0 || n1 > 255 || n2 < 0 || n2 > 255 || n3 < 0 || n3 > 255 || n4 < 0 || n4 > 255) {
         risultato.textContent = "Inserisci numeri validi tra 0 e 255 in tutti i campi.";
         risultato.style.color = "red";
       } else {
@@ -69,7 +119,7 @@
         let b4 = parseInt(n4).toString(2).padStart(8, '0');
 
         risultato.textContent = "Numeri binari a 8 bit: " + b1 + "." + b2 + "." + b3 + "." + b4;
-        risultato.style.color = "d48aa3";
+        risultato.style.color = "black";
       }
     }
   </script>
